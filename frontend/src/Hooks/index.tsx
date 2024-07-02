@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BACKEND_URL } from "../../confiq"
+import { BACKEND_URL } from "../../Confiq";
 
 export interface Blog {
   content: string;

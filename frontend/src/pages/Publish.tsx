@@ -1,6 +1,6 @@
 import { Appbar } from "../components/Appbar";
 import axios from "axios";
-import { BACKEND_URL } from "../../confiq"
+import { BACKEND_URL } from "../../Confiq";
 import { useNavigate } from "react-router-dom";
 import { ChangeEvent, useState } from "react";
 
