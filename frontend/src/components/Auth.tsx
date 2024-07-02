@@ -1,10 +1,11 @@
-
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SignupInput } from "@100xdevs/medium-common";
 import axios from "axios";
 import { BACKEND_URL } from "../Confiq";
-import { toast } from "react-toastify";
+import Alert from "@mui/material/Alert";
+
+
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   const navigate = useNavigate();
@@ -23,9 +24,9 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
       const jwt = response.data;
       localStorage.setItem("token", jwt);
       navigate("/blogs");
-      toast.success("Signup successful!");
+      <Alert severity="success">This is a success Alert.</Alert>;
     } catch (e) {
-       toast.error("Signup failed. Please try again.");
+      <Alert severity="error">This is an error Alert.</Alert>;
       // alert the user here that the request failed
     }
   }

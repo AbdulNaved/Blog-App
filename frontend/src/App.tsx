@@ -4,7 +4,7 @@ import { Blog } from "./pages/Blog";
 import { Signin } from "./pages/Signin";
 import { Blogs } from "./pages/Blogs";
 import { Publish } from "./pages/Publish";
-import { ToastContainer, } from "react-toastify";
+
 
 function App() {
   return (
@@ -20,18 +20,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+     
     </>
   );
 }
