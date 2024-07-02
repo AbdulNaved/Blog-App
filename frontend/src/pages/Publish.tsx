@@ -1,8 +1,8 @@
 import { Appbar } from "../components/Appbar";
 import axios from "axios";
-import { BACKEND_URL } from "../Confiq";
 import { useNavigate } from "react-router-dom";
 import { ChangeEvent, useState } from "react";
+import { BACKEND_URL } from "../Confiq";
 
 export const Publish = () => {
   const [title, setTitle] = useState("");

@@ -1,9 +1,10 @@
+
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SignupInput } from "@100xdevs/medium-common";
 import axios from "axios";
 import { BACKEND_URL } from "../Confiq";
-//import { BACKEND_URL } from "../../Confiq"
+import { toast } from "react-toastify";
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   const navigate = useNavigate();
@@ -22,8 +23,9 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
       const jwt = response.data;
       localStorage.setItem("token", jwt);
       navigate("/blogs");
+      toast.success("Signup successful!");
     } catch (e) {
-      alert("Error while signing up");
+       toast.error("Signup failed. Please try again.");
       // alert the user here that the request failed
     }
   }
@@ -50,7 +52,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             {type === "signup" ? (
               <LabelledInput
                 label="Name"
-                placeholder="AbdulNaved..."
+                placeholder="Naved..."
                 onChange={(e) => {
                   setPostInputs({
                     ...postInputs,
@@ -60,8 +62,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
               />
             ) : null}
             <LabelledInput
-              label="Username"
-              placeholder="AbdulNaved@gmail.com"
+              label="Email"
+              placeholder="name@gmail.com"
               onChange={(e) => {
                 setPostInputs({
                   ...postInputs,
